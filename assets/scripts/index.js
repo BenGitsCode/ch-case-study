@@ -1,6 +1,5 @@
 'use strict';
 
-let chart1 =
 
 let margin = {
     top: 30,
@@ -18,14 +17,6 @@ let svg = d3.select("#graph1").append("svg")
   .append("g") //used to group SVG shapes together
   .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-// svg.call(tip);
-d3.json('http://api.population.io/1.0/population/1950/United%20States/', function (data){
-  let headers = ["Female"];
-
-  //explicit return of object with x & y
-  //d3 requires x, y, & y0
-  //each block takes 2 y values to map blocks on top of one another
-  //d3.layout.stack returns y0
   let layers = d3.layout.stack()(headers.map(function(total) {
     return data.map(function(d) {
       return {
@@ -36,6 +27,26 @@ d3.json('http://api.population.io/1.0/population/1950/United%20States/', functio
   }));
   console.log(layers);
 
+  //determining scale
+  let xScale = d3.scale.ordinal()
+  .domain(layers[0].map(function(d) {
+    return d.x;
+  }))
+  .rangeRoundBands([20, width], 0.1); //padding away from y axis & width of bars
+
+  let y = d3.scale.linear()
+  .domain([0, yStackMax])
+  .range([height, 0]);
+
+// svg.call(tip);
+d3.json('http://api.population.io/1.0/population/1950/United%20States/', function (data){
+  let headers = ["Female"];
+
+  //explicit return of object with x & y
+  //d3 requires x, y, & y0
+  //each block takes 2 y values to map blocks on top of one another
+  //d3.layout.stack returns y0
+
   //calculate max in layers variables
   let yStackMax = d3.max(layers, function(layer) {
     return d3.max(layer, function(d) {
@@ -43,16 +54,6 @@ d3.json('http://api.population.io/1.0/population/1950/United%20States/', functio
     });
   });
 
-  //determining scale
-  let xScale = d3.scale.ordinal()
-    .domain(layers[0].map(function(d) {
-      return d.x;
-    }))
-    .rangeRoundBands([20, width], 0.1); //padding away from y axis & width of bars
-
-  let y = d3.scale.linear()
-    .domain([0, yStackMax])
-    .range([height, 0]);
 
   //set color range
   let color = d3.scale.ordinal()
