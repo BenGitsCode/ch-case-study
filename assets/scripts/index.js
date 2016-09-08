@@ -1,5 +1,7 @@
 'use strict';
 
+
+
 let margin = {
     top: 30,
     right: 50,
@@ -157,6 +159,7 @@ d3.json('http://api.population.io/1.0/population/1950/United%20States/', functio
       return d;
     });
 });
+
 
 
 // SECOND GRAPH  ////////////
