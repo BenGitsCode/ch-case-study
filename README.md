@@ -1,5 +1,3 @@
-# ga-wdi-boston-js-template
-
 > Crimson Hexagon technical case study
 
 - 2 D3 graphs
@@ -26,11 +24,6 @@
 ```
 ```
 
-## Contribute
-
-PRs accepted.
-
-Small note: If editing the Readme, please conform to the [standard-readme](https://github.com/RichardLitt/standard-readme) specification.
 
 ## License
 

@@ -28,7 +28,7 @@ let margin = {
         };
       });
     }));
-    console.(layers);
+    console.log(layers);
 
   let xScale = d3.scale.ordinal()
   .domain(layers[0].map(function(d) {
@@ -198,7 +198,7 @@ let margin = {
 // //         };
 // //       });
 // //     }));
-// //  
+// //
 // //
 // //   let xScale = d3.scale.ordinal()
 // //   .domain(layers[0].map(function(d) {
