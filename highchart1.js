@@ -7,6 +7,28 @@
 
 // chart: type, title text, xaxis categories, y axis title
 
+
+$.getJSON('http://api.population.io/1.0/population/1950/United%20States/', function(data) {
+ for (data, function(key,value) {
+  let series = { data: [] };
+  $.each(value, function(key, val) {
+     if(key === 'total') {
+     let val = series.name;
+   }
+  else
+   {
+    $.each(val, function(key, val) {
+     series.data[0].total.push();
+     });
+    }
+   });
+  // }
+
+
+
+
+
+
 $.getJSON('http://api.population.io/1.0/population/1950/United%20States/', function(data) {
   $.each(data, function(key,value) {
       var series = { data: []};
@@ -33,34 +55,34 @@ $.getJSON('http://api.population.io/1.0/population/1950/United%20States/', funct
 
 
 
-// function visitorData (data) {
-//    $('#chart1').highcharts({
-//     chart: {
-//         type: 'column'
-//     },
-//     title: {
-//         text: 'Male Population by age in 1950'
-//     },
-//     xAxis: {
-//         categories: ['']
-//     },
-//     yAxis: {
-//         title: {
-//             text: 'Number of visitors'
-//         }
-//     },
-//     series: data,
-//   });
-// }
-// $(()=>{
-// // CHART CODE HERE
-//  $.ajax({
-//     url: '/URL with JSON DATA',
-//     type: 'GET',
-//     async: true,
-//     dataType: "json",
-//     success: function (data) {
-//         visitorData(data);
-//     }
-//   });
-//  });
+function visitorData (data) {
+   $('#chart1').highcharts({
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Male Population by age in 1950'
+    },
+    xAxis: {
+        categories: ['']
+    },
+    yAxis: {
+        title: {
+            text: 'Number of visitors'
+        }
+    },
+    series: data,
+  });
+}
+$(()=>{
+// CHART CODE HERE
+ $.ajax({
+    url: '/URL with JSON DATA',
+    type: 'GET',
+    async: true,
+    dataType: "json",
+    success: function (data) {
+        visitorData(data);
+    }
+  });
+ });
