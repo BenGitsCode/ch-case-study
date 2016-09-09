@@ -9,11 +9,11 @@
 
 
 $.getJSON('http://api.population.io/1.0/population/1950/United%20States/', function(data) {
- for (data, function(key,value) {
   let series = { data: [] };
+ for (data, function(key,value) {
   $.each(value, function(key, val) {
      if(key === 'total') {
-     let val = series.name;
+     let val = series.total;
    }
   else
    {

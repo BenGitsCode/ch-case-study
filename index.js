@@ -1,10 +1,9 @@
 'use strict';
 
-// user require with a reference to bundle the file and use it in this file
-// var example = require('./example');
 
 // load manifests
 // scripts
+require('./assets/scripts/index.js');
 require('./assets/scripts/index.js');
 
 // styles
@@ -45,7 +44,7 @@ let margin = {
         };
       });
     }));
-    console.log(layers);
+    console.log("layers" + layers);
 
   let xScale = d3.scale.ordinal()
   .domain(layers[0].map(function(d) {
