@@ -17,12 +17,27 @@
 ## Install
 
 ```
+npm install
 ```
 
-## Usage
+```
+grunt install
+```
+```
+grunt serve
+```
 
-```
-```
+## Deliverables
+
+- 4 charts (or more) with visualizations of your choice - IN PROGRESS
+- 2 utilizing d3.js - COMPLETE
+- 2 utilizing Highcharts — IN PROGRESS
+- Any API (or multiple APIs) as data source - COMPLETE
+- React and/or jQuery - COMPLETE (jQuery)
+- Responsive SASS/CSS - IN PROGRESS
+- One “cool” feature of your choice - IN PROGRESS
+
+## 
 
 
 ## License
