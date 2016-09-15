@@ -32,20 +32,20 @@ $.getJSON('http://api.population.io/1.0/population/1950/United%20States/', funct
 
 
 
-// $.getJSON('http://api.population.io/1.0/population/1950/United%20States/', function(data) {
-//    $.each(data, function(key, val) {
-//      if(key === 'total') {
-//        let val = series.total;
-//      }
-//      else
-//      {
-//        $.each(val, function(key, val) {
-//          val.push();
-//        });
-//      }
-//    });
-//
-// });
+$.getJSON('http://api.population.io/1.0/population/1950/United%20States/', function(data) {
+   $.each(data, function(key, val) {
+     if(key === 'total') {
+       let val = series.total;
+     }
+     else
+     {
+       $.each(val, function(key, val) {
+         val.push();
+       });
+     }
+   });
+
+});
 //
 // $.getJSON('http://api.population.io/1.0/population/1950/United%20States/', function(data) {
 //   $.each(data, function(key,value) {
@@ -73,7 +73,7 @@ $.getJSON('http://api.population.io/1.0/population/1950/United%20States/', funct
 //
 //
 //
-// function visitorData (data) {
+// function popData (data) {
 //    $('#chart1').highcharts({
 //     chart: {
 //         type: 'column'
@@ -82,11 +82,11 @@ $.getJSON('http://api.population.io/1.0/population/1950/United%20States/', funct
 //         text: 'Male Population by age in 1950'
 //     },
 //     xAxis: {
-//         categories: ['']
+//         categories: ['Age']
 //     },
 //     yAxis: {
 //         title: {
-//             text: 'Number of visitors'
+//             text: 'Population'
 //         }
 //     },
 //     series: data,
