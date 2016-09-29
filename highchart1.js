@@ -8,22 +8,22 @@
 // chart: type, title text, xaxis categories, y axis title
 
 
-$.getJSON('http://api.population.io/1.0/population/1950/United%20States/', function(data) {
-  let series = { data: [] };
- for (let i = 0; i < series.length; i++) {
-   if (key === 'total') {
-     let total = [];
-     console.log(i);
-     series.data.push([[i]]);
-   }
-   else
-   {
-     for (let i = 0; i < series.length; i++) {
-       array[i]
-      }
-   }
-   }
- });
+//TODO fix this mess $.getJSON('http://api.population.io/1.0/population/1950/United%20States/', function(data) {
+//   let series = { data: [] };
+//  for (let i = 0; i < series.length; i++) {
+//    if (key === 'total') {
+//      let total = [];
+//      console.log(i);
+//      series.data.push([[i]]);
+//    }
+//    else
+//    {
+//      for (let i = 0; i < series.length; i++) {
+//        array[i]
+//       }
+//    }
+//    }
+//  });
 
 
 
